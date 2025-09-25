@@ -4,51 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Black Theme with MS Edge Blue Accents */
+/* Portfolio Design System - Dark Theme with Purple & Orange Accents */
 
 @layer base {
   :root {
-    /* Black Theme Base Colors */
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    /* Dark Theme Base Colors */
+    --background: 225 25% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 224 30% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 224 30% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    /* MS Edge Blue Gradient */
-    --primary: 205 100% 50%;
-    --primary-foreground: 0 0% 98%;
-    --primary-dark: 205 100% 35%;
+    /* Primary Purple Gradient */
+    --primary: 250 84% 64%;
+    --primary-foreground: 210 40% 98%;
+    --primary-dark: 250 60% 45%;
 
     /* Secondary Grays */
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 40% 90%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Cyan Accent */
-    --accent: 185 100% 50%;
-    --accent-foreground: 0 0% 98%;
+    /* Orange Accent */
+    --accent: 18 100% 60%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 205 100% 50%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 250 84% 64%;
 
     --radius: 0.75rem;
 
     /* Custom Portfolio Colors */
-    --hero-gradient-start: 205 100% 50%;
-    --hero-gradient-end: 185 100% 50%;
-    --cyan-accent: 185 100% 50%;
-    --blue-light: 205 100% 60%;
-    --glass-bg: 0 0% 8% / 0.8;
+    --hero-gradient-start: 250 84% 64%;
+    --hero-gradient-end: 280 80% 55%;
+    --orange-accent: 18 100% 60%;
+    --purple-light: 250 84% 70%;
+    --glass-bg: 224 30% 12% / 0.8;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,7 +76,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--cyan-accent)));
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--orange-accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -95,28 +95,6 @@
 
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  .text-glow {
-    color: white;
-    text-shadow: 
-      0 0 5px hsl(var(--primary) / 1),
-      0 0 10px hsl(var(--primary) / 0.8),
-      0 0 15px hsl(var(--primary) / 0.6),
-      0 0 20px hsl(var(--cyan-accent) / 0.4),
-      0 0 35px hsl(var(--cyan-accent) / 0.3);
-    animation: textGlow 2s ease-in-out infinite alternate;
-    transition: all 0.3s ease;
-  }
-
-  .text-glow:hover {
-    text-shadow: 
-      0 0 8px hsl(var(--primary) / 1),
-      0 0 15px hsl(var(--primary) / 1),
-      0 0 25px hsl(var(--primary) / 0.8),
-      0 0 35px hsl(var(--cyan-accent) / 0.6),
-      0 0 50px hsl(var(--cyan-accent) / 0.4);
-    transform: scale(1.02);
   }
 
   .hover-lift {
@@ -144,7 +122,7 @@
 @layer components {
   /* Custom Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-blue-light text-white px-8 py-4 rounded-xl font-semibold;
+    @apply bg-gradient-to-r from-primary to-purple-light text-white px-8 py-4 rounded-xl font-semibold;
     @apply hover:scale-105 hover:shadow-lg hover:shadow-primary/30;
     @apply transition-all duration-300;
   }
@@ -179,31 +157,6 @@
 @keyframes glow {
   from { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
   to { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
-}
-
-@keyframes textGlow {
-  0% { 
-    text-shadow: 
-      0 0 5px hsl(var(--primary) / 1),
-      0 0 10px hsl(var(--primary) / 0.8),
-      0 0 15px hsl(var(--primary) / 0.6),
-      0 0 20px hsl(var(--cyan-accent) / 0.4);
-  }
-  50% {
-    text-shadow: 
-      0 0 8px hsl(var(--primary) / 1),
-      0 0 18px hsl(var(--primary) / 1),
-      0 0 28px hsl(var(--cyan-accent) / 0.8),
-      0 0 38px hsl(var(--cyan-accent) / 0.6),
-      0 0 48px hsl(var(--cyan-accent) / 0.4);
-  }
-  100% { 
-    text-shadow: 
-      0 0 5px hsl(var(--primary) / 1),
-      0 0 10px hsl(var(--primary) / 0.8),
-      0 0 15px hsl(var(--primary) / 0.6),
-      0 0 20px hsl(var(--cyan-accent) / 0.4);
-  }
 }
 
 @layer base {

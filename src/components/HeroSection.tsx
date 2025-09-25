@@ -16,8 +16,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 gradient-primary opacity-90" />
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-cyan-accent/20 rounded-full animate-float" />
-      <div className="absolute top-40 right-20 w-32 h-32 bg-blue-light/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-20 left-10 w-20 h-20 bg-orange-accent/20 rounded-full animate-float" />
+      <div className="absolute top-40 right-20 w-32 h-32 bg-purple-light/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
       <div className="absolute bottom-40 left-1/4 w-16 h-16 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '4s' }} />
 
       <div className="container-custom relative z-10">
@@ -27,7 +27,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Hello, I'm{' '}
-                <span className="text-cyan-accent">Anupam</span>
+                <span className="text-orange-accent">Anupam</span>
               </h1>
               <div className="text-2xl lg:text-3xl font-semibold space-y-2">
                 <p>Data Scientist</p>
@@ -68,7 +68,7 @@ const HeroSection = () => {
                 href="https://linkedin.com/in/anupam-anand-singh" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-cyan-accent transition-colors hover:scale-110 transform duration-300"
+                className="text-white hover:text-orange-accent transition-colors hover:scale-110 transform duration-300"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -76,7 +76,7 @@ const HeroSection = () => {
                 href="https://github.com/anupam-anand-singh" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-cyan-accent transition-colors hover:scale-110 transform duration-300"
+                className="text-white hover:text-orange-accent transition-colors hover:scale-110 transform duration-300"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -87,7 +87,7 @@ const HeroSection = () => {
           <div className="relative flex justify-center">
             <div className="relative">
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-cyan-accent/30 rounded-full blur-3xl animate-glow" />
+              <div className="absolute inset-0 bg-orange-accent/30 rounded-full blur-3xl animate-glow" />
               
               {/* Profile Image */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 hover-lift">
