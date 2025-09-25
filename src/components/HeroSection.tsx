@@ -38,10 +38,8 @@ const HeroSection = () => {
             </div>
 
             <p className="text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl">
-              Aspiring Data Scientist and AI Engineer skilled in Machine Learning, 
-              Deep Learning, and Generative AI, with hands-on expertise in MLOps 
-              and cloud deployment. Passionate about building scalable, intelligent 
-              systems that turn data into impactful solutions.
+              Aspiring Data Scientist and AI Engineer skilled in Machine Learning, Deep Learning, and Generative AI. 
+              Passionate about building scalable, intelligent systems that turn data into impactful solutions.
             </p>
 
             {/* CTA Buttons */}
