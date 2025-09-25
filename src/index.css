@@ -4,51 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Dark Theme with Purple & Orange Accents */
+/* Portfolio Design System - Black Theme with MS Edge Blue Accents */
 
 @layer base {
   :root {
-    /* Dark Theme Base Colors */
-    --background: 225 25% 8%;
-    --foreground: 210 40% 98%;
+    /* Black Theme Base Colors */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
 
-    --card: 224 30% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 224 30% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary Purple Gradient */
-    --primary: 250 84% 64%;
-    --primary-foreground: 210 40% 98%;
-    --primary-dark: 250 60% 45%;
+    /* MS Edge Blue Gradient */
+    --primary: 205 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --primary-dark: 205 100% 35%;
 
     /* Secondary Grays */
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 210 40% 90%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Orange Accent */
-    --accent: 18 100% 60%;
-    --accent-foreground: 210 40% 98%;
+    /* Cyan Accent */
+    --accent: 185 100% 50%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 250 84% 64%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 205 100% 50%;
 
     --radius: 0.75rem;
 
     /* Custom Portfolio Colors */
-    --hero-gradient-start: 250 84% 64%;
-    --hero-gradient-end: 280 80% 55%;
-    --orange-accent: 18 100% 60%;
-    --purple-light: 250 84% 70%;
-    --glass-bg: 224 30% 12% / 0.8;
+    --hero-gradient-start: 205 100% 50%;
+    --hero-gradient-end: 185 100% 50%;
+    --cyan-accent: 185 100% 50%;
+    --blue-light: 205 100% 60%;
+    --glass-bg: 0 0% 8% / 0.8;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,7 +76,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--orange-accent)));
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--cyan-accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -122,7 +122,7 @@
 @layer components {
   /* Custom Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-purple-light text-white px-8 py-4 rounded-xl font-semibold;
+    @apply bg-gradient-to-r from-primary to-blue-light text-white px-8 py-4 rounded-xl font-semibold;
     @apply hover:scale-105 hover:shadow-lg hover:shadow-primary/30;
     @apply transition-all duration-300;
   }
