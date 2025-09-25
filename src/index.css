@@ -99,14 +99,24 @@
 
   .text-glow {
     color: white;
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--cyan-accent) / 0.4);
-    animation: textGlow 3s ease-in-out infinite alternate;
+    text-shadow: 
+      0 0 5px hsl(var(--primary) / 1),
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 15px hsl(var(--primary) / 0.6),
+      0 0 20px hsl(var(--cyan-accent) / 0.4),
+      0 0 35px hsl(var(--cyan-accent) / 0.3);
+    animation: textGlow 2s ease-in-out infinite alternate;
     transition: all 0.3s ease;
   }
 
   .text-glow:hover {
-    text-shadow: 0 0 15px hsl(var(--primary) / 1), 0 0 30px hsl(var(--primary) / 0.8), 0 0 45px hsl(var(--cyan-accent) / 0.6);
-    transform: scale(1.05);
+    text-shadow: 
+      0 0 8px hsl(var(--primary) / 1),
+      0 0 15px hsl(var(--primary) / 1),
+      0 0 25px hsl(var(--primary) / 0.8),
+      0 0 35px hsl(var(--cyan-accent) / 0.6),
+      0 0 50px hsl(var(--cyan-accent) / 0.4);
+    transform: scale(1.02);
   }
 
   .hover-lift {
@@ -173,13 +183,26 @@
 
 @keyframes textGlow {
   0% { 
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--cyan-accent) / 0.4);
+    text-shadow: 
+      0 0 5px hsl(var(--primary) / 1),
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 15px hsl(var(--primary) / 0.6),
+      0 0 20px hsl(var(--cyan-accent) / 0.4);
   }
   50% {
-    text-shadow: 0 0 20px hsl(var(--primary) / 1), 0 0 40px hsl(var(--cyan-accent) / 0.8), 0 0 60px hsl(var(--cyan-accent) / 0.6);
+    text-shadow: 
+      0 0 8px hsl(var(--primary) / 1),
+      0 0 18px hsl(var(--primary) / 1),
+      0 0 28px hsl(var(--cyan-accent) / 0.8),
+      0 0 38px hsl(var(--cyan-accent) / 0.6),
+      0 0 48px hsl(var(--cyan-accent) / 0.4);
   }
   100% { 
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--cyan-accent) / 0.4);
+    text-shadow: 
+      0 0 5px hsl(var(--primary) / 1),
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 15px hsl(var(--primary) / 0.6),
+      0 0 20px hsl(var(--cyan-accent) / 0.4);
   }
 }
 
