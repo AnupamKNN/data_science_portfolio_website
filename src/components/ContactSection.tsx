@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mail, Linkedin, Github, Send, PhoneCall } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -7,43 +7,21 @@ import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration - replace with your actual service details
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: 'anupam.anand.singh@email.com'
-      };
-
-      // Note: In production, replace with your actual EmailJS service ID, template ID, and public key
-      await emailjs.send(
-        'your_service_id', // Replace with your EmailJS service ID
-        'your_template_id', // Replace with your EmailJS template ID
-        templateParams,
-        'your_public_key' // Replace with your EmailJS public key
+      // Replace these with your actual EmailJS credentials
+      await emailjs.sendForm(
+        'service_lm3c8tu',     // Replace with your service ID
+        'template_z0rhcch',    // Replace with your template ID
+        form.current!,
+        'HHr19PaJ7riK1SRVn'      // Replace with your public key
       );
       
       toast({
@@ -51,24 +29,15 @@ const ContactSection = () => {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: "Message sent!",
-        description: "Your message has been received. I'll get back to you soon.",
-      });
+      // Reset form
+      form.current?.reset();
       
-      // Clear form even if EmailJS fails (for demo purposes)
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly.",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
@@ -79,23 +48,30 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'anupam.anand.singh@email.com',
-      href: 'mailto:anupam.anand.singh@email.com',
+      value: 'anupam.rajput09@outlook.com',
+      href: 'mailto:anupam.rajput09@outlook.com',
       color: 'from-blue-400 to-blue-600'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/anupam-anand-singh',
-      href: 'https://linkedin.com/in/anupam-anand-singh',
+      value: 'https://www.linkedin.com/in/anupam-singh-1l/',
+      href: 'https://www.linkedin.com/in/anupam-singh-1l/',
       color: 'from-blue-600 to-indigo-600'
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/anupam-anand-singh',
-      href: 'https://github.com/anupam-anand-singh',
+      value: 'https://github.com/AnupamKNN',
+      href: 'https://github.com/AnupamKNN',
       color: 'from-gray-600 to-gray-800'
+    },
+    {
+      icon: PhoneCall,
+      label: 'Phone',
+      value: '+91 7666384632',
+      href: 'tel:+91 7666384632',
+      color: 'from-green-400 to-green-600'
     }
   ];
 
@@ -168,34 +144,30 @@ const ContactSection = () => {
           <div className="bg-card rounded-xl p-8 hover-lift">
             <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label htmlFor="from_name" className="block text-sm font-medium mb-2">
                     Name *
                   </label>
                   <Input
-                    id="name"
-                    name="name"
+                    id="from_name"
+                    name="from_name"
                     type="text"
                     required
-                    value={formData.name}
-                    onChange={handleInputChange}
                     placeholder="Your full name"
                     className="w-full"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label htmlFor="from_email" className="block text-sm font-medium mb-2">
                     Email *
                   </label>
                   <Input
-                    id="email"
-                    name="email"
+                    id="from_email"
+                    name="from_email"
                     type="email"
                     required
-                    value={formData.email}
-                    onChange={handleInputChange}
                     placeholder="your.email@company.com"
                     className="w-full"
                   />
@@ -211,23 +183,19 @@ const ContactSection = () => {
                   name="subject"
                   type="text"
                   required
-                  value={formData.subject}
-                  onChange={handleInputChange}
                   placeholder="Project consultation, collaboration, etc."
                   className="w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="from_message" className="block text-sm font-medium mb-2">
                   Message *
                 </label>
                 <Textarea
-                  id="message"
-                  name="message"
+                  id="from_message"
+                  name="from_message"
                   required
-                  value={formData.message}
-                  onChange={handleInputChange}
                   placeholder="Tell me about your project, timeline, budget, and specific requirements..."
                   rows={6}
                   className="w-full resize-none"
@@ -275,7 +243,7 @@ const ContactSection = () => {
             variant="outline"
             size="lg"
             className="btn-outline"
-            onClick={() => window.open('https://calendly.com/anupam-anand-singh', '_blank')}
+            onClick={() => window.open('https://calendar.app.google/f9eothAUMj9vW8sf6', '_blank')}
           >
             Schedule a Call
           </Button>

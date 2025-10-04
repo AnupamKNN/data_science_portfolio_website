@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, PhoneCall } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,18 +6,23 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/anupam-anand-singh',
+      href: 'https://www.linkedin.com/in/anupam-singh-1l/',
       label: 'LinkedIn'
     },
     {
       icon: Github,
-      href: 'https://github.com/anupam-anand-singh',
+      href: 'https://github.com/AnupamKNN',
       label: 'GitHub'
     },
     {
       icon: Mail,
-      href: 'mailto:anupam.anand.singh@email.com',
+      href: 'mailto:anupam.rajput09@outlook.com',
       label: 'Email'
+    },
+    {
+      icon: PhoneCall,
+      href: 'tel:+91-7666384632',
+      label: 'Phone'
     }
   ];
 
@@ -27,6 +32,7 @@ const Footer = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Services', href: '#services' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -94,15 +100,19 @@ const Footer = () => {
             <div className="space-y-3">
               <p className="text-muted-foreground">
                 <span className="font-medium">Email:</span><br />
-                anupam.anand.singh@email.com
+                anupam.rajput09@outlook.com
               </p>
               <p className="text-muted-foreground">
                 <span className="font-medium">LinkedIn:</span><br />
-                linkedin.com/in/anupam-anand-singh
+                linkedin.com/in/anupam-singh-1l/
               </p>
               <p className="text-muted-foreground">
                 <span className="font-medium">GitHub:</span><br />
-                github.com/anupam-anand-singh
+                github.com/AnupamKNN/
+              </p>
+              <p className="text-muted-foreground">
+                <span className="font-medium">Phone:</span><br />
+                +91-7666384632
               </p>
             </div>
           </div>
@@ -112,7 +122,7 @@ const Footer = () => {
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} Anupam Anand Singh. All rights reserved.
+              © {currentYear} All rights reserved.
             </div>
             
             <div className="flex items-center text-muted-foreground text-sm">

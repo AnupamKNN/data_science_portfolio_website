@@ -1,33 +1,6 @@
 import { Award, Target, Users, Zap } from 'lucide-react';
 
 const AboutSection = () => {
-  const stats = [
-    {
-      icon: Target,
-      number: '50+',
-      label: 'Projects Completed',
-      description: 'Successfully delivered data science and AI projects across various industries'
-    },
-    {
-      icon: Users,
-      number: '25+',
-      label: 'Clients Served',
-      description: 'Helped businesses transform their operations with intelligent solutions'
-    },
-    {
-      icon: Award,
-      number: '3+',
-      label: 'Years Experience',
-      description: 'Deep expertise in machine learning, AI, and data engineering'
-    },
-    {
-      icon: Zap,
-      number: '99%',
-      label: 'Client Satisfaction',
-      description: 'Consistently delivering high-quality solutions that exceed expectations'
-    }
-  ];
-
   const values = [
     {
       title: 'Innovation First',
@@ -55,8 +28,7 @@ const AboutSection = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate about transforming data into actionable insights and building 
-            intelligent systems that drive business value
+            Redefining how businesses see data. Building intelligence that powers growth.
           </p>
         </div>
 
@@ -88,7 +60,20 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Values */}
+            {/* Mission Statement - Moved below My Journey */}
+            <div className="bg-card p-6 rounded-xl border border-border">
+              <h4 className="font-semibold text-lg mb-3 gradient-text">Mission Statement</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                "To democratize the power of artificial intelligence by creating accessible, 
+                practical solutions that empower businesses to make data-driven decisions and 
+                achieve sustainable growth through intelligent automation."
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* Core Values - Moved beside My Journey and above Areas of Expertise */}
             <div>
               <h3 className="text-2xl font-bold mb-6">Core Values</h3>
               <div className="grid grid-cols-2 gap-4">
@@ -107,38 +92,6 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Right Column - Stats */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">By the Numbers</h3>
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => {
-                  const IconComponent = stat.icon;
-                  return (
-                    <div 
-                      key={index}
-                      className="bg-card p-6 rounded-xl text-center hover-lift group"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-primary to-accent text-white mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-6 h-6" />
-                      </div>
-                      <div className="text-3xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                        {stat.number}
-                      </div>
-                      <div className="font-semibold text-sm mb-2 text-foreground">
-                        {stat.label}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {stat.description}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
 
             {/* Expertise Areas */}
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-6 border border-primary/20">
@@ -147,10 +100,16 @@ const AboutSection = () => {
                 {[
                   'Machine Learning & Deep Learning',
                   'Generative AI & Large Language Models',
+                  'Multi-Agent RAG Solutions',
                   'MLOps & Cloud Deployment',
                   'Data Analytics & Visualization',
                   'Natural Language Processing',
-                  'Computer Vision Applications'
+                  'Stakeholder Engagement',
+                  'Project Management & Agile Methodology',
+                  'Jira & MS Project',
+                  
+
+                  
                 ].map((area, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent mr-3" />
@@ -158,16 +117,6 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Mission Statement */}
-            <div className="bg-card p-6 rounded-xl border border-border">
-              <h4 className="font-semibold text-lg mb-3 gradient-text">Mission Statement</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                "To democratize the power of artificial intelligence by creating accessible, 
-                practical solutions that empower businesses to make data-driven decisions and 
-                achieve sustainable growth through intelligent automation."
-              </p>
             </div>
           </div>
         </div>

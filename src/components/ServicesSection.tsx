@@ -14,7 +14,7 @@ const ServicesSection = () => {
   const services = [
     {
       icon: BarChart3,
-      title: 'Freelance Data Analysis & Dashboarding',
+      title: 'Data Analysis & Dashboarding',
       description: 'Transform your raw data into actionable insights with interactive Power BI dashboards, advanced SQL analytics, and comprehensive Excel reporting solutions.',
       features: [
         'Interactive Power BI Dashboards',
