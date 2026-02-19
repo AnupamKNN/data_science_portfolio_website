@@ -108,7 +108,7 @@ const ProjectsSection = () => {
     },
     {
       id: '3',
-      title: 'Multi-Agent GenAI Knowledge Navigator',
+      title: 'GenAI Knowledge Navigator',
       domain: 'Enterprise Learning',
       shortDescription: 'InfoFusion Technologies, a fast-growing enterprise learning and AI solutions provider, helps organizations stay competitive by closing skill gaps and accelerating knowledge adoption. My goal is to implement intelligent, data-driven learning platforms that deliver personalized microlearning and real-time industry insights to boost workforce readiness.',
       fullDescription: {
